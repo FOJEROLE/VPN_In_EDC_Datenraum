@@ -1,0 +1,53 @@
+---
+- client_id: adminUI
+  client_name: Omejdn Admin UI
+  client_uri: http://localhost
+  logo_uri: http://localhost/assets/img/fhg.jpg
+  grant_types: authorization_code
+  software_id: Omejdn Admin UI
+  software_version: 0.0.0
+  token_endpoint_auth_method: none
+  redirect_uris: http://localhost
+  post_logout_redirect_uris: http://localhost
+  scope:
+  - openid
+  - omejdn:admin
+  - omejdn:write
+  - omejdn:read
+  attributes: []
+- client_id: F0:F9:6E:FB:66:5E:78:2D:55:5F:17:2A:40:80:9D:3C:08:9F:90:40:F0:F9:6E:FB:66:5E:78:2D:55:5F:17:2A:40:80:9D:3C:08:9F:90:40
+  client_name: connector01
+  grant_types: client_credentials
+  token_endpoint_auth_method: private_key_jwt
+  scope: idsc:IDS_CONNECTOR_ATTRIBUTES_ALL
+  attributes:
+  - key: idsc
+    value: IDS_CONNECTOR_ATTRIBUTES_ALL
+  - key: securityProfile
+    value: idsc:BASE_SECURITY_PROFILE
+  - key: referringConnector
+    value: http://connector01.demo
+  - key: "@type"
+    value: ids:DatPayload
+  - key: "@context"
+    value: https://w3id.org/idsa/contexts/context.jsonld
+  - key: transportCertsSha256
+    value: 1018b3bb730dc5c6e1bbedc0ee3f6ecaa90b0b918932cda1e597a196c3b2294d
+- client_id: 1F:54:39:86:05:CF:F0:DA:2D:C5:AC:3B:5D:40:EE:D5:62:25:F1:6F:1F:54:39:86:05:CF:F0:DA:2D:C5:AC:3B:5D:40:EE:D5:62:25:F1:6F
+  client_name: connector02
+  grant_types: client_credentials
+  token_endpoint_auth_method: private_key_jwt
+  scope: idsc:IDS_CONNECTOR_ATTRIBUTES_ALL
+  attributes:
+  - key: idsc
+    value: IDS_CONNECTOR_ATTRIBUTES_ALL
+  - key: securityProfile
+    value: idsc:BASE_SECURITY_PROFILE
+  - key: referringConnector
+    value: http://connector02.demo
+  - key: "@type"
+    value: ids:DatPayload
+  - key: "@context"
+    value: https://w3id.org/idsa/contexts/context.jsonld
+  - key: transportCertsSha256
+    value: dca05a1e1b395d4c275cb436a8576f0c54482f7c18fb08b4722566f739e07bb0
