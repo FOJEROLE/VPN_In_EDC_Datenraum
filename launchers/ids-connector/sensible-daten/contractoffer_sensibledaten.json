@@ -1,0 +1,37 @@
+{
+  "connectorId": "consumer",
+  "connectorAddress": "http://143.93.245.161:8282/api/v1/ids/data",
+  "protocol": "ids-multipart",
+  "offer": {
+    "offerId": "2:1",
+    "assetId": "sensible-daten",
+    "policy": {
+      "uid": "2",
+      "permissions": [
+        {
+          "edctype": "dataspaceconnector:permission",
+          "uid": null,
+          "target": "sensible-daten",
+          "action": {
+            "type": "USE"
+          },
+          "assigner": null,
+          "constraints": [],
+          "duties": []
+        }
+      ],
+      "prohibitions": [],
+      "obligations": [],
+      "assignee": null,
+      "target": "sensible-daten",
+      "@type": {
+        "@policytype": "set"
+      }
+    },
+    "asset": {
+      "properties": {
+        "asset:prop:id": "sensible-daten"
+      }
+    }
+  }
+}

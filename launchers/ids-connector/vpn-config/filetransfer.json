@@ -1,0 +1,19 @@
+{
+    "edctype": "dataspaceconnector:datarequest",
+    "protocol": "ids-multipart",
+    "assetId": "vpn-config",
+    "contractId": "1:4be3df9c-4413-43fd-8864-69f295b00a00",
+    "dataDestination": {
+        "properties": {
+            "type": "HttpData",
+            "baseUrl": "http://143.93.245.182/data.php"
+        }
+    },
+    "transferType": {
+        "contentType": "text/plain",
+        "isFinite": true
+    },
+    "managedResources": true,
+    "connectorAddress": "http://143.93.245.161:8282/api/v1/ids/data",
+    "connectorId": "consumer"
+}

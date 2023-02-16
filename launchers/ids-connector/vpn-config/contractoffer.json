@@ -1,0 +1,37 @@
+{
+  "connectorId": "consumer",
+  "connectorAddress": "http://143.93.245.161:8282/api/v1/ids/data",
+  "protocol": "ids-multipart",
+  "offer": {
+    "offerId": "1:1",
+    "assetId": "vpn-config",
+    "policy": {
+      "uid": "1",
+      "permissions": [
+        {
+          "edctype": "dataspaceconnector:permission",
+          "uid": null,
+          "target": "vpn-config",
+          "action": {
+            "type": "USE"
+          },
+          "assigner": null,
+          "constraints": [],
+          "duties": []
+        }
+      ],
+      "prohibitions": [],
+      "obligations": [],
+      "assignee": null,
+      "target": "vpn-config",
+      "@type": {
+        "@policytype": "set"
+      }
+    },
+    "asset": {
+      "properties": {
+        "asset:prop:id": "vpn-config"
+      }
+    }
+  }
+}

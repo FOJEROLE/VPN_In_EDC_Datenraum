@@ -1,0 +1,14 @@
+{
+  "asset": {
+    "id": "sensible-daten",
+    "properties": {
+      "asset:prop:id": "sensible-daten"
+   }
+  },
+  "dataAddress": {
+    "properties": {
+      "baseUrl": "http://10.8.8.1/sensible-daten/asset-sensible-daten.txt",
+      "type": "HttpData"
+    }
+  }
+}

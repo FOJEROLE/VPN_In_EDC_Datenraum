@@ -1,0 +1,56 @@
+./gradlew clean :launchers:ids-connector:build
+java -Dedc.fs.config=/home/labadmin/ba_praxis/DataSpaceConnector/launchers/ids-connector/config.properties \
+    -Dedc.vault=/home/labadmin/ba_praxis/DataSpaceConnector/launchers/ids-connector/config.properties \
+    -Dedc.keystore=/home/labadmin/ba_praxis/DataSpaceConnector/launchers/ids-connector/connector01.p12 \
+    -Dedc.keystore.password=123456 \
+    -jar launchers/ids-connector/build/libs/dataspace-connector.jar
+
+
+
+export http_proxy=http://143.93.245.182/ids-connector:80
+export http_proxy=http://143.93.245.161/ids-connector/:80
+export http_proxy=http://143.93.245.161:9191/api/v1/management/assets
+
+
+java -Dedc.fs.config=/home/labadmin/ba_praxis/DataSpaceConnector/launchers/ids-connector/config.properties \
+    -Dedc.vault=/home/labadmin/ba_praxis/DataSpaceConnector/launchers/ids-connector/config.properties \
+    -Dedc.keystore=/home/labadmin/ba_praxis/DataSpaceConnector/launchers/ids-connector/connector02.p12 \
+    -Dedc.keystore.password=123456 \
+    -jar launchers/ids-connector/build/libs/dataspace-connector.jar
+
+
+
+
+curl -X POST "http://143.93.245.161:8181:/api/file/test-document?connectorAddress=http://143.93.245.182:8181/&destination=/home/labadmin/ba_praxis/"
+
+./gradlew transfer:transfer-01-file-transfer:file-transfer-consumer:build
+java -Dedc.fs.config=/home/labadmin/ba_praxis/Samples/transfer/transfer-01-file-transfer/file-transfer-consumer/config.properties \
+    -Dedc.vault=/home/labadmin/ba_praxis/Samples/transfer/transfer-01-file-transfer/file-transfer-consumer/config.properties \
+    -Dedc.keystore=/home/labadmin/ba_praxis/Samples/transfer/transfer-01-file-transfer/file-transfer-consumer/connector02.p12 \
+    -Dedc.keystore.password=123456 \
+    -jar transfer/transfer-01-file-transfer/file-transfer-consumer/build/libs/consumer.jar
+
+
+
+#Provider
+./gradlew 04.0-file-transfer:file-transfer-provider:build
+java -Dedc.fs.config=/home/labadmin/ba_praxis/Samples/04.0-file-transfer/file-transfer-provider/config.properties \
+    -Dedc.vault=/home/labadmin/ba_praxis/Samples/04.0-file-transfer/file-transfer-provider/config.properties \
+    -Dedc.keystore=/home/labadmin/ba_praxis/Samples/04.0-file-transfer/file-transfer-provider/connector01.p12 \
+    -Dedc.keystore.password=123456 \
+    -jar 04.0-file-transfer/file-transfer-provider/build/libs/provider.jar
+
+
+#DataTransfert
+curl -X POST -H "Content-Type: application/json" -H "X-Api-Key: password" -d @04.0-file-transfer/contractoffer.json "http://143.93.245.161:818
+2/api/v1/management/contractnegotiations"
+
+curl -X GET -H 'X-Api-Key: password' "http://143.93.245.161:8182/api/v1/management/contractnegotiations/28cd99fe-4313-45ab-a922-3248883a057a"
+
+curl -X POST -H "Content-Type: application/json" -H "X-Api-Key: password" -d @04.0-file-transfer/filetransfer.json "http://143.93.245.161:8182
+/api/v1/management/transferprocess"
+
+
+
+
+curl -X POST "Content-Type: application/json" -H "X-Api-Key: password" -d 

@@ -1,0 +1,13 @@
+{
+    "accessPolicyId": "HS-Worms-Policy",
+    "contractPolicyId": "HS-Worms-Policy",
+    "criteria": [
+        {
+            "operandLeft": "asset:prop:id",
+            "operandRight": "vpn-config",
+            "operator": "string"
+        }
+    ],
+    "id": "1",
+    "validity": 31536000
+}

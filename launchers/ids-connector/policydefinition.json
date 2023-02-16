@@ -1,0 +1,25 @@
+{
+    "id": "HS-Worms-Policy",
+    "policy": {
+        "permissions": [
+            {
+                "edctype": "dataspaceconnector:permission",
+                "uid": null,
+                "target": null,
+                "action": {
+                    "type": "USE"
+                },
+                "assigner": null,
+                "constraints": [],
+                "duties": []
+            }
+        ],
+        "prohibitions": [],
+        "obligations": [],
+        "assignee": null,
+        "target": null,
+        "@type": {
+            "@policytype": "set"
+        }
+    }
+}

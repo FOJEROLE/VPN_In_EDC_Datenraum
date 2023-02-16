@@ -1,0 +1,13 @@
+{
+    "accessPolicyId": "HS-Worms-Policy",
+    "contractPolicyId": "HS-Worms-Policy",
+    "criteria": [
+        {
+            "operandLeft": "asset:prop:id",
+            "operandRight": "sensible-daten",
+            "operator": "string"
+        }
+    ],
+    "id": "2",
+    "validity": 31536000
+}
