@@ -1,0 +1,3 @@
+[submodule "ProviderConnector"]
+	path = ProviderConnector
+	url = https://github.com/FOJEROLE/DataSpaceConnector
