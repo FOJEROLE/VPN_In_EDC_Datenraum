@@ -1,0 +1,16 @@
+{
+  "asset": {
+    "id": "MyPublicKey",
+    "properties": {
+      "ids:byteSize": null,
+      "asset:prop:id": "UKheYJFQV88sp7NBYTrcP6D0R8WVseFI8miAL1VVdXA=",
+      "ids:fileName": null
+   }
+  },
+  "dataAddress": {
+    "properties": {
+      "baseUrl": "http://143.93.245.161/ids-connector/publicKey.txt",
+      "type": "HttpData"
+    }
+  }
+}

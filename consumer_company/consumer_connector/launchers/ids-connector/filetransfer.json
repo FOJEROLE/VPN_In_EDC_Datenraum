@@ -1,0 +1,21 @@
+{
+  "edctype": "dataspaceconnector:datarequest",
+  "protocol": "ids-multipart",
+  "assetId": "test-document",
+  "contractId": "1:a564b5de-40f7-40e1-b11e-247ade6eb157",
+  "dataDestination": {
+    "dataDestination": {
+    "type": "HttpProxy"
+    }
+  },
+  "transferType": {
+    "contentType": "application/octet-stream",
+    "isFinite": true
+  },
+  "managedResources": false,
+  "connectorAddress": "http://143.93.245.182:8282/api/v1/ids/data",
+  "connectorId": "consumer"
+  "properties": {
+    "receiver.http.endpoint" : "http://143.93.245.161:8182"
+  }
+}

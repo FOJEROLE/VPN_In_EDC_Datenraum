@@ -1,0 +1,13 @@
+{
+    "accessPolicyId": "use-eu",
+    "contractPolicyId": "use-eu",
+    "criteria": [
+        {
+            "operandLeft": "asset:prop:id",
+            "operandRight": "vpn-config",
+            "operator": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDG1P2rIB1HYAuijb228RmLF+6zU9CoAamtlTqghHMhZ7ACuFJcsbk2PasDpfXfGprByc06ZJf22dopAYIzFKnxGoEZ4b8rAYCFF4aUD1x1DOjF5U7K8ED1ED/hP7g8RelG3kxmw7X9km2GWVGdoA27aW0j9JNL6Qj+VC7XSdKx6Vbyr7u9kWmwyngiXszshfWmg0PaUAqiL8EFNSfo7i7I2cCK14JqxaJGWygr+upJpNUqhtk+D0iXAFMQ692PtTCnnL2WnO8zrqQtNBGyRZWvs9q8dWdJwExwAXGWpyac/ad6WvaiAZLdlwuJYJ5V4kxS25+ikvSwZ0eWHqc739pJw/0cUtzTAMt1hnn/3EGa7IQ00D7KxH5y5TJc4Si83hB9dcBOxH+Hxe1HvZvyZCKCrpULyu0Xnu9l6N3E8vx8Lmj6L/7ijQl+jyxUrQmTytqY5lwvhyNcpuQXcyqsffOtJiqdAVfJVWbH43NJwP0gGI1nJgg3X/j2HuO5Tirrp4x3CKNoCpXsEa6LE/cHlbpvAEHNy9vutndpaqytNkE0TK/+ajnwOGqFMYqZ4aZYq50wze1ZwrYzAdGnpl6LOtHVf5iNGzscMZ4mH3XVHacesHFIq8lf4JFHtVd7GqPQcngnYRAus71nmhZFQfWjKCsM8ciXupFkW6WEik6YnNHboQ== labadmin@ba-fotsing01"
+        }
+    ],
+    "id": "1",
+    "validity": 31536000
+}
