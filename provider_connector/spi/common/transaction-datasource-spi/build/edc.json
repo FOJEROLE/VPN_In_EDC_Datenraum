@@ -1,0 +1,1 @@
+[{"categories":[""],"extensions":[],"extensionPoints":[{"service":"org.eclipse.edc.transaction.datasource.spi.DataSourceRegistry"}],"modulePath":"connector.spi.common:transaction-datasource-spi","version":"unspecified","name":"DataSource services"}]
