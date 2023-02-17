@@ -2,6 +2,11 @@
 
 Dieses Dokument beschreibt die Implementierung eines Datenraums mithilfe der Eclipse Dataspace-Komponenten und die Erstellung einer VPN-Verbindung zwischen zwei Teilnehmern, um die Sicherheit bei der Datenübertragung zu erhöhen. Die erforderlichen Komponenten für den Datenraum sind der Eclipse Dataspace Connector, der Identitätsprovider (DAPS) sowie zwei Connectoren für jeweils eine Firma. Zur Durchführung der Tests wurde eine Testumgebung bestehend aus drei virtuellen Ubuntu-Maschinen verwendet.
 
+## Wichtig
+
+Sie müssen den Nginx-Endpunkt beide Seite konfigurieren,
+Die minimale Konfiguration finden Sie in dem jeweiligen Verzeichnis  
+
 ## Bemerkung
 
 Diese Dokumentation basiert auf der Eclipse-Dokumentation, die unter folgendem Link verfügbar ist: [https://github.com/eclipse-edc/Connector].

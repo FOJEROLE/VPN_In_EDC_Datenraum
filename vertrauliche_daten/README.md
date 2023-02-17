@@ -22,8 +22,7 @@ Achten Sie auf den richtigen Pfad zu sein
 
 ### Contractdefinition erstellen
 
-```curl -X POST -H "Content-Type: application/json" -H "X-Api-Key: password" -d @contractdefinitionsensibledaten.json "http://provider_ip:9191/api/v1/management/contractdefinitions"
-```
+```curl -X POST -H "Content-Type: application/json" -H "X-Api-Key: password" -d @contractdefinitionsensibledaten.json "http://provider_ip:9191/api/v1/management/contractdefinitions"```
 
 
 3: Der Consumer führt eine Katalogabfrage des Providers durch und alle verfügbaren Assets des Providers.
