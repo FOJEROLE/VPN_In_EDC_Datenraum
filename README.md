@@ -47,19 +47,30 @@ Wie bereits erklärt, wird keine Zertifizierungsstelle verwendet, deshalb wird d
 
 4. Registrieren Sie einen Connector (das Sicherheitsprofil ist optional und wird standardmäßig auf idsc:BASE_SECURITY_PROFILE gesetzt, wenn es nicht angegeben wird):
 
- ```scripts/register_connector.sh <client-name-for-connector> <security-profile>```
+ ```shell
+ scripts/register_connector.sh <client-name-for-connector> <security-profile>
+ ```
 Nach der Registrierung des Connectors werden zwei Dateien (ein Schlüssel .key und ein Zertifikat .cert) erstellt und im Verzeichnis keys gespeichert.
 
 5. Erstellen Sie einen Keystore, der beide Dateien speichert:
-```openssl pkcs12 -export -in keys/<client-name>.cert -inkey keys/<client-name>.key -out <client-name>.p12```  m resultierenden Schlüsselspeicher (Keystore) hat das Zertifikat den Alias 1.
+```shell
+openssl pkcs12 -export -in keys/<client-name>.cert -inkey keys/<client-name>.key -out <client-name>.p12
+```  
+Das resultierenden Schlüsselspeicher (Keystore) hat das Zertifikat den Alias 1.
 
 6. Senden Sie den Keystore an den Connector:
 
+```shell
 scp omejdn-daps/keystor.p12 user@xxx.xxx.xxx.xxx:/home/remote_dir
+```
 
 7. Optional können weitere Connectors registriert werden, indem Schritt 5 mehrmals mit unterschiedlichen Clientnamen durchgeführt wird.
 
-8.  Führen Sie den DAPS aus: ```bash docker compose -f compose.yml up```
+8.  Führen Sie den DAPS aus:
+ ```shell
+ bash docker compose -f compose.yml up
+ ```
+
 9. Wenn Sie in den Logs omejdn-server_1 | == Sinatra (v2.1.0) has taken the stage on 4567 for development with backup from Thin sehen, ist der DAPS bereit, Anfragen anzunehmen. Die URL, unter der der Konnektor das DAPS erreichen kann, ergibt sich aus <http://localhost:80> (kann aber in der .env-Datei geändert werden), die von NGINX in der docker-compose-Datei verwendet wird.
 
 # Konfiguration von Connectoren
@@ -71,7 +82,7 @@ Hier ein paar grundlegende Konfigurationen:
 Der Connector, der hier benutzt wird, ist ids-launchers aus dieser Repository: [https://github.com/eclipse-edc/Connector/tree/main/launchers/ids-connector].
 Wir haben für das Projekt unsere build.gradle.kts-Datei folgendermaßen konfiguriert:
 
-```
+```shell
 // in build.gradle.kts:
     implementation(project(":core:control-plane:control-plane-core"))
     implementation(project(":core:data-plane-selector:data-plane-selector-core"))
@@ -112,17 +123,20 @@ Führen Sie die folgenden Befehle aus:
 
 Auf der Provider-VM:
 
-```./gradlew clean :launchers:ids-connector:build
+```shell
+./gradlew clean :launchers:ids-connector:build
 java -Dedc.fs.config=/VPN_In_EDC_Datenraum/provider_company/provider_connector/launchers/ids-connector/config.properties \
     -Dedc.vault=/VPN_In_EDC_Datenraum/provider_company/provider_connector/launchers/ids-connector/config.properties \
     -Dedc.keystore=/VPN_In_EDC_Datenraum/provider_company/provider_connector/launchers/ids-connector/connector02.p12 \
     -Dedc.keystore.password=123456 \
-    -jar launchers/ids-connector/build/libs/dataspace-connector.jar```
+    -jar launchers/ids-connector/build/libs/dataspace-connector.jar
+```
 
 - Auf der Consumer-vm
 
 
-```./gradlew clean :launchers:ids-connector:build
+```shell
+./gradlew clean :launchers:ids-connector:build
 java -Dedc.fs.config=/VPN_In_EDC_Datenraum/consumer_company/consumer_connector/launchers/ids-connector/config.properties \
     -Dedc.vault=/VPN_In_EDC_Datenraum/consumer_company/consumer_connector/launchers/ids-connector/config.properties \
     -Dedc.keystore=/VPN_In_EDC_Datenraum/consumer_company/consumer_connector/launchers/ids-connector/connector01.p12 \
@@ -133,3 +147,8 @@ java -Dedc.fs.config=/VPN_In_EDC_Datenraum/consumer_company/consumer_connector/l
 ## Wichtig
 
 Passen Sie die Pfade an, wenn nötig.
+## Weitere Schritte
+
+Jetzt haben wir unser Datenraum aufgebaut. Um das VPN-Tunnel zwischen dem Provider und Consumer aufzubauen. folgen Sie die Schritte in [README.md](../VPN_In_EDC_Datenraum/vpn-config/README.md).
+
+Schließlich folgen Sie die Schritte in [README.md](../VPN_In_EDC_Datenraum/vertrauliche_daten/README.md), um die vertraulichen Daten zu senden.
