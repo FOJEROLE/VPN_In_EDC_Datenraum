@@ -149,6 +149,6 @@ java -Dedc.fs.config=/VPN_In_EDC_Datenraum/consumer_company/consumer_connector/l
 Passen Sie die Pfade an, wenn nötig.
 ## Weitere Schritte
 
-Jetzt haben wir unser Datenraum aufgebaut. Um das VPN-Tunnel zwischen dem Provider und Consumer aufzubauen. folgen Sie die Schritte in [README.md](../VPN_In_EDC_Datenraum/vpn-config/README.md).
+Jetzt haben wir unser Datenraum aufgebaut. Um das VPN-Tunnel zwischen dem Provider und Consumer aufzubauen. folgen Sie die Schritte in [README.md](/vpn-config/README.md).
 
-Schließlich folgen Sie die Schritte in [README.md](../VPN_In_EDC_Datenraum/vertrauliche_daten/README.md), um die vertraulichen Daten zu senden.
+Schließlich folgen Sie die Schritte in [README.md](/vertrauliche_daten/README.md), um die vertraulichen Daten zu senden.
