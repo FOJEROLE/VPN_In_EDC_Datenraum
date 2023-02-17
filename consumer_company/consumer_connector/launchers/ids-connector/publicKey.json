@@ -3,13 +3,13 @@
     "id": "MyPublicKey",
     "properties": {
       "ids:byteSize": null,
-      "asset:prop:id": "UKheYJFQV88sp7NBYTrcP6D0R8WVseFI8miAL1VVdXA=",
+      "asset:prop:id": "yzUfg6B7HfgVbM4iiSyyZ29vbYNdDBbzVWUNXEU2Ik8=",
       "ids:fileName": null
    }
   },
   "dataAddress": {
     "properties": {
-      "baseUrl": "http://143.93.245.161/ids-connector/publicKey.txt",
+      "baseUrl": "http://143.93.245.182/publicKey.txt",
       "type": "HttpData"
     }
   }
